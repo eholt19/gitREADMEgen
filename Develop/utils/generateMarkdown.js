@@ -30,17 +30,19 @@ function generateMarkdown(data) {
   * [Contributing](#contributing)
   * [Tests](#tests)
   * [Questions](#questions)
-  ${renderLicenseLink(data.license)}
     
     ## Description
     ${data.description}
+
     ## Installation
     ${data.instalation}
+
     ## Usage
     ${data.usage}
 
     ## License
     ${data.license}
+    ${renderLicenseLink(data.license)}
     
     ## Contributing
     ${data.contributing}
