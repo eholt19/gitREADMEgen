@@ -21,7 +21,7 @@ const questions = [
     {
         type: 'input',
         message: 'How do you install this application?',
-        name: 'instalation',
+        name: 'installation',
     },
     {
         type: 'input',
@@ -30,7 +30,7 @@ const questions = [
     },
     {
         type: 'input',
-        message: 'Which lisence would you like your application to be covered under?',
+        message: 'Which license would you like your application to be covered under?',
         name: 'license',
     },
     {

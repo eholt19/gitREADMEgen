@@ -23,7 +23,7 @@ function generateMarkdown(data) {
   return `# ${data.title}
   ${renderLicenseBadge(data.license)}
   * [Description](#description)
-  * [Instalation](#instalation)
+  * [Installation](#installation)
   * [Usage](#usage)
   * [Contributing](#contributing)
   * [Tests](#tests)
@@ -31,7 +31,7 @@ function generateMarkdown(data) {
   ${renderLicenseLink(data.license)}
     ## Description
     ${data.description}
-    ## Instalation
+    ## Installation
     ${data.instalation}
     ## Usage
     ${data.usage}
