@@ -16,12 +16,12 @@ const questions = [
     {
         type: 'input',
         message: 'Write a table of contents:',
-        name: 'table of contents',
+        name: 'tableOfContents',
     },
     {
         type: 'input',
         message: 'How do you install this application?',
-        name: 'instalation',
+        name: 'installation',
     },
     {
         type: 'input',
@@ -30,7 +30,7 @@ const questions = [
     },
     {
         type: 'input',
-        message: 'Which lisence would you like your application to be covered under?',
+        message: 'Which license would you like your application to be covered under?',
         name: 'license',
     },
     {
@@ -55,9 +55,6 @@ const questions = [
     },
 ];
 
-inquirer.prompt(questions).then(answers => {
-    console.log(answers);
-});
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
@@ -78,6 +75,36 @@ function init() {
 
     inquirer.prompt(questions).then(answers => {
         console.log(answers);
+        const readmeContent = `
+        # ${answers.title}
+
+        ## Description
+        ${answers.description}
+
+        ## Table of Contents
+        ${answers.tableOfContents}
+
+        ## Installation
+        ${answers.isntallation}
+
+        ## Usage
+        ${answers.usage}
+
+        ## License
+        ${answers.license}
+
+        ## Contributing
+        ${answers.contributing}
+
+        ## Testing
+        ${answers.tests}
+
+        ## Questions
+        If you have any questions, reach out to me here:
+        - GitHub: [${answers.link}]
+        - Email: ${answers.email}
+        `;
+        writeToFile('README.md', readmeContent);
     });
 }
 
