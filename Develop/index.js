@@ -75,35 +75,7 @@ function init() {
 
     inquirer.prompt(questions).then(answers => {
         console.log(answers);
-        const readmeContent = `
-        # ${answers.title}
-
-        ## Description
-        ${answers.description}
-
-        ## Table of Contents
-        ${answers.tableOfContents}
-
-        ## Installation
-        ${answers.isntallation}
-
-        ## Usage
-        ${answers.usage}
-
-        ## License
-        ${answers.license}
-
-        ## Contributing
-        ${answers.contributing}
-
-        ## Testing
-        ${answers.tests}
-
-        ## Questions
-        If you have any questions, reach out to me here:
-        - GitHub: [${answers.link}]
-        - Email: ${answers.email}
-        `;
+        const readmeContent = generateMarkdown(answers);
         writeToFile('README.md', readmeContent);
     });
 }
