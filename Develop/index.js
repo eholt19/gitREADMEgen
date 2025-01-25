@@ -46,12 +46,12 @@ const questions = [
     {
         type: 'input',
         message: 'Enter your GitHub username:',
-        name: 'questions',
+        name: 'link',
     },
     {
         type: 'input',
         message: 'Enter your email:',
-        name: 'questions',
+        name: 'email',
     },
 ];
 
@@ -69,6 +69,8 @@ function writeToFile(fileName, data) {
         }
     });
  }
+
+ writeToFile ();
 
 // TODO: Create a function to initialize app
 function init() {
