@@ -1,6 +1,7 @@
 // TODO: Include packages needed for this application
 import inquirer from 'inquirer';
 import fs from 'fs';
+import generateMarkdown from './utils/generateMarkdown.js';
 // TODO: Create an array of questions for user input
 const questions = [
     {
@@ -12,11 +13,6 @@ const questions = [
         type: 'input',
         message: 'Describe your application:',
         name: 'description',
-    },
-    {
-        type: 'input',
-        message: 'Write a table of contents:',
-        name: 'tableOfContents',
     },
     {
         type: 'input',
@@ -66,8 +62,6 @@ function writeToFile(fileName, data) {
         }
     });
  }
-
- writeToFile ();
 
 // TODO: Create a function to initialize app
 function init() {
