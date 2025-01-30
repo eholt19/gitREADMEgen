@@ -12,11 +12,24 @@ function renderLicenseBadge(license) {
 
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
-function renderLicenseLink(license) { }
+function renderLicenseLink(license) { 
+  const links = {
+    'MIT': 'https://opensource.org/licenses/MIT',
+    'Mozilla': 'https://opensource.org/licenses/MPL-2.0',
+    'Apache': 'https://opensource.org/licenses/Apache-2.0',
+    'ISC': 'https://opensource.org/licenses/ISC'
+    };
+    return links[license] ? `[${license} License] (${links[license]})` : '';
+}
 
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
-function renderLicenseSection(license) { }
+function renderLicenseSection(license) { 
+  if (!license) {
+    return '';
+    }
+    return `## License ${renderLicenseBadge(license)} This project is licensed under the [${license}] (${renderLicenseLink(license)}).`;
+}
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
@@ -30,17 +43,19 @@ function generateMarkdown(data) {
   * [Contributing](#contributing)
   * [Tests](#tests)
   * [Questions](#questions)
-  ${renderLicenseLink(data.license)}
     
     ## Description
     ${data.description}
+
     ## Installation
     ${data.installation}
+
     ## Usage
     ${data.usage}
 
     ## License
     ${data.license}
+    ${renderLicenseLink(data.license)}
     
     ## Contributing
     ${data.contributing}
