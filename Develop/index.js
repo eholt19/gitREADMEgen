@@ -28,6 +28,7 @@ const questions = [
         type: 'input',
         message: 'Which license would you like your application to be covered under?',
         name: 'license',
+        choices: ['MimeTypeArray', 'Mozilla', 'Apache', 'ISC'],
     },
     {
         type: 'input',
